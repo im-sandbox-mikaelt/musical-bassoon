@@ -45,6 +45,7 @@ jobs:
         with:
           repository: 'im-sandbox-mikaelt/hello-Tamdem-composite-action'
           path: ./.github/actions/hello-Tamdem-composite-action
+          token: ${{ secrets.GH_TOKEN }}
 
       # Runs a composite action from a different repo.
       - name: Run a Composite Action
