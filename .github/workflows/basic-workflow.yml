@@ -41,9 +41,13 @@ jobs:
         if: ${{ github.event_name == 'pull-request' }}
         run: echo Hello, from the PR!
 
-  deployment:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - run: echo Hello, from the Deployment!
+      - uses: actions/checkout@v3
+        with:
+          repository: 'im-sandbox-mikaelt/hello-Tamdem-composite-action'
+          path: ./.github/actions/hello-Tamdem-composite-action
 
+      # Runs a composite action from a different repo.
+      - name: Run a Composite Action
+        uses: ./.github/actions/hello-Tamdem-composite-action
+        with:
+           who-to-greet: 'Tamdem is here'
