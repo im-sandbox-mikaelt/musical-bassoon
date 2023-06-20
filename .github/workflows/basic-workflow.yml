@@ -41,6 +41,12 @@ jobs:
         if: ${{ github.event_name == 'pull-request' }}
         run: echo Hello, from the PR!
 
+  # This workflow contains a single job called "build"
+  compositeaction:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
       - uses: actions/checkout@v3
         with:
           repository: 'im-sandbox-mikaelt/hello-Tamdem-composite-action'
